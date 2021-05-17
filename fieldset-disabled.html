@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cross-browser example</title>
+    <meta name="author" content="TACS" />
+    <meta
+      name="description"
+      content="Open with Chrome and Firefox to see different implementations of the same HTML. In Chrome, the event will be bubbled up to the form. In Firefox, the event will be supressed by the disabled fieldset and the alert will not fire"
+    />
+    <meta
+      name="keywords"
+      content="frontend, html, chrome, firefox, cross, browser, compatibility"
+    />
+  </head>
+  <body style="width: 30%">
+    <!-- Chrome: onclick gets bubbled to form. Firefox: onclick does not reach the form -->
+    <form onclick="alert('something has been clicked inside the form')">
+      <fieldset disabled style="display: flex; flex-direction: column; align-items: center">
+        <legend><span>Inside this disabled fieldset, the anchor fires an event</span></legend>
+        <button>Disabled button :(</button>
+        <a href="">Disabled? anchor</a>
+      </fieldset>
+    </form>
+  </body>
+</html>
